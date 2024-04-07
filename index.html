@@ -31,7 +31,7 @@
           id="search-bar"
           type="text"
           name="Search City"
-          placeholder="Enter City"
+          placeholder="&nbsp;Enter City"
         />
         <img
           id="search-icon"
@@ -47,7 +47,7 @@
         <section id="data">
           <h1 id="headline">
             Weather predicted in
-            <span id="cityname" style="color: rgb(0, 183, 255)">City Name</span
+            <span id="cityname">City Name</span
             >:Says Report
           </h1>
           <div id="subheadline">
@@ -58,8 +58,8 @@
               height="100px"
             />
             <h2 id="h2-line">
-              City appears to have
-              <span id="description">fewer clouds</span>
+              City expected to have
+              <span id="description"><i>fewer clouds</i></span>
             </h2>
           </div>
           <div id="middle-info">
@@ -85,21 +85,25 @@
               /><span>WindSpeedm/s</span>
             </div>
           </div>
-          <p style="text-align: justify">
-            The city is expected to get &gt;Clear Sky till &gt;Date+1. The sky
-            conditions will mostly be of &gt;desc in the afternoons. Maximum and
-            minimum tempratures will be around &gt;Maxtemp &deg;C and
-            &gt;Maxtemp &deg;C. It maybe feels like &gt;feels like. Atmospheric
-            pressure on the sea level will be &gt;pressure hPa and ground level
-            will be &gt;grnd_level hPa. Wind speed forecast to move
-            &gt;WindSpeed m/s off the coast to &gt;winddegree degrees.<br />Sunrise:
-            and Sunset:
+          <p id="paragraph" style="text-align: justify">
+            &emsp;&emsp;According to the Meteorological Department, the weather
+            pattern is not going to change in the coming days. The city is
+            expected to get &gt;Clear Sky till &gt;Date+1. The sky conditions
+            will mostly be of &gt;desc in the afternoons. Maximum and minimum
+            tempratures will be around &gt;Maxtemp &deg;C and &gt;Maxtemp
+            &deg;C. It maybe feels like &gt;feels like in many areas of
+            &gt;CITYNAME overnight. Due to atmospheric pressure on the sea level
+            (&gt;pressure hPa) and ground level (&gt;grnd_level hPa), the wind
+            speed forecast to move &gt;WindSpeed m/s off the coast to
+            &gt;winddegree degrees.<br />Sunrise and Sunset will be on 06:23 AM
+            and 06:23 PM respectively.
           </p>
         </section>
       </article>
       <aside id="aside">
+        <img src="assets/city.webp" alt="Indian Cityscape"><br> 
         <span style="font-size: 50px">L</span>
-        orm ipsum dolor sit amet consectetur adipisicing elit. Et quam est quia
+        orem ipsum dolor sit amet consectetur adipisicing elit. Et quam est quia
         molestiae, accusantium minus aliquam impedit nulla ratione neque libero
         amet maiores incidunt autem. Voluptas repellat iste dignissimos iure.
         Minus dolorem doloremque, exercitationem dolore consequatur perspiciatis
@@ -118,22 +122,18 @@
         dolorem doloremque, exercitationem dolore consequatur perspiciatis fuga
         iste, maiores dolorum ipsa soluta similique mollitia sequi possimus
         quaerat quo quia voluptas explicabo nam? Nostrum suscipit, quas quis
-        molestiae quod tempore?Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Et quam est quia molestiae, accusantium minus aliquam
-        impedit nulla ratione neque libero amet maiores incidunt autem. Voluptas
-        repellat iste dignissimos iure. Minus dolorem doloremque, exercitationem
-        dolore consequatur perspiciatis fuga iste, maiores dolorum ipsa soluta
-        similique mollitia sequi possimus quaerat quo quia voluptas explicabo
-        nam? Nostrum suscipit, quas quis molestiae quod tempore?Lorem ipsum
-        dolor sit amet consectetur adipisicing
+        molestiae quod temporett.
       </aside>
     </div>
-    <footer>
+    <footer id="footer">
       FooterFooterFooterFooterFooterFooterFooterFooterFooterFooterFooterFooterFooter
       Lorem ipsum dFooterolor sit amet consectetur adipisicing elit. At
       architecto quasi aliquam magnam doloribus laboriosam adipisci officiis
       amet qui, dolorum odit culpa ullam voluptatem mollitia, quidem temporibus
-      commodi voluptates veniam.
+      commodi voluptates veniam. Lorem ipsum dolor, sit amet consectetur
+      adipisicing elit. Earum pariatur eveniet aspernatur sed atque porro ipsum
+      iusto veritatis temporibus. Qui, eveniet modi? Neque aliquid nemo aperiam
+      delectus, est tenetur possimus.
     </footer>
   </body>
 </html>
@@ -154,3 +154,15 @@ const amPm = (istDate.getHours() < 12) ? 'AM' : 'PM';
 const formattedDate = `${hours}:${minutes.toString().padStart(2, '0')} ${amPm}`;
 
 console.log(formattedDate); -->
+
+
+<!-- const today = new Date();
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+const day = days[today.getDay()];
+const dd = String(today.getDate()).padStart(2, '0');
+const mm = months[today.getMonth()];
+const yyyy = today.getFullYear();
+
+console.log(`${day}, ${dd} ${mm}, ${yyyy}`); -->
