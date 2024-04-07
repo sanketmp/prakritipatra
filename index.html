@@ -45,11 +45,7 @@
     <div id="lorem">
       <article id="article">
         <section id="data">
-          <!-- <h1 id="headline">
-            Weather predicted in
-            <span id="cityname">CityName</span>:Says Report
-          </h1> -->
-          <h1 id="headline">ttttttttttttttttttttt</h1>
+          <h1 id="headline">Weather predicted in ${city}:Says Report</h1>
           <div id="subheadline">
             <img id="main-img" src="" alt="apiImage" height="100px" />
             <h2 id="h2-line">
@@ -58,7 +54,7 @@
             </h2>
           </div>
           <div id="middle-info">
-            <span id="main-temp">1234567890&deg;C</span>
+            <span id="main-temp"></span>
             <div id="clouds-etc">
               <img
                 id="main-img"
@@ -121,9 +117,7 @@
         accusantium minus aliquam impedit nulla ratione neque libero amet
         maiores incidunt autem. Voluptas repellat iste dignissimos iure. Minus
         dolorem doloremque, exercitationem dolore consequatur perspiciatis fuga
-        iste, maiores dolorum ipsa soluta similique mollitia sequi possimus
-        quaerat quo quia voluptas explicabo nam? Nostrum suscipit, quas quis
-        molestiae quod temporett.
+        iste.
       </aside>
     </div>
     <footer id="footer">
@@ -138,31 +132,3 @@
     <script type="module" src="script.js"></script>
   </body>
 </html>
-
-<!-- const utcTimestamp = 1712451217;
-
-// Convert UTC timestamp to milliseconds
-const utcDate = new Date(utcTimestamp * 1000);
-
-// Define IST offset (5 hours and 30 minutes ahead of UTC)
-const istOffset = 5.5;
-const istDate = new Date(utcDate.getTime() + (istOffset * 60 * 60 * 1000));
-
-// Format IST date in 12-hour format
-const hours = istDate.getHours() % 12 || 12;
-const minutes = istDate.getMinutes();
-const amPm = (istDate.getHours() < 12) ? 'AM' : 'PM';
-const formattedDate = `${hours}:${minutes.toString().padStart(2, '0')} ${amPm}`;
-
-console.log(formattedDate); -->
-
-<!-- const today = new Date();
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
-const day = days[today.getDay()];
-const dd = String(today.getDate()).padStart(2, '0');
-const mm = months[today.getMonth()];
-const yyyy = today.getFullYear();
-
-console.log(`${day}, ${dd} ${mm}, ${yyyy}`); -->

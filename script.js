@@ -97,7 +97,7 @@ function updateweather(data) {
     ).src = `https://openweathermap.org/img/w/${data?.weather?.[0]?.icon}.png`;
     document.querySelector("#main-temp").innerHTML = `${(
       data?.main?.temp - 273
-    ).toFixed(1)}&deg;`;
+    ).toFixed(1)}&deg;C`;
     document.querySelector(
       "#windspeed"
     ).innerHTML = `${data?.wind?.speed}&nbsp;m&#47;s`;

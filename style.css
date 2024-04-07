@@ -82,7 +82,7 @@ body {
   text-align: justify;
 }
 
-#data{
+#data {
   visibility: hidden;
 }
 
@@ -140,4 +140,78 @@ body {
   clear: left;
   border-top: 1px solid black;
   padding: 5px;
+}
+
+@media only screen and (max-width: 576px) {
+  html body {
+    max-width: 100%;
+    margin: auto;
+  }
+  #heading h1 {
+    font-size: 50px;
+    font-weight: 200;
+  }
+  #heading #mainlogo {
+    height: 35px;
+  }
+  #search {
+    width: 97%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #search #currentlocation {
+    height: 25px;
+    margin: 0;
+  }
+
+  #search #search-icon {
+    height: 25px;
+  }
+
+  #search #search-bar {
+    font-size: 15px;
+    height: 20px;
+    border: rgb(255, 255, 255) 1px solid;
+  }
+
+  #search #continent {
+    margin: 0;
+  }
+
+  #article,
+  #aside {
+    float: none;
+    width: 100%;
+  }
+
+  #aside {
+    width: 95%;
+    margin: auto;
+    font-size: 15px;
+  }
+
+  #data #headline {
+    font-size: 60px;
+  }
+
+  #data #subheadline #h2-line {
+    font-size: 25px;
+    margin: 0;
+  }
+
+  #data #main-temp {
+    font-size: 30px;
+  }
+
+  #data #paragraph {
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #footer {
+    font-size: 15px;
+  }
 }
