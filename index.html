@@ -44,16 +44,18 @@
     </section>
     <div id="lorem">
       <article id="article">
+        <div class="error">
+          <h1>CityNotfound.</h1>
+        </div>
         <section id="data">
           <h1 id="headline">
             Weather predicted in
-            <span id="cityname">City Name</span
-            >:Says Report
+            <span id="cityname">CityName</span>:Says Report
           </h1>
           <div id="subheadline">
             <img
               id="main-img"
-              src="https://openweathermap.org/img/w/02d.png"
+              src=""
               alt="apiImage"
               height="100px"
             />
@@ -70,38 +72,44 @@
                 src="assets/clouds.svg"
                 alt="api"
                 height="50px"
-              /><span>Clouds%</span>
+              /><span id="clouds">Clouds%</span>
               <img
                 id="main-img"
                 src="assets/humid.svg"
                 alt="api"
                 height="40px"
-              /><span>Humidity%</span>
+              /><span id="humidity">Humidity%</span>
               <img
                 id="main-img"
                 src="assets/gusts.svg"
                 alt="api"
                 height="35px"
-              /><span>WindSpeedm/s</span>
+              /><span id="windspeed">WindSpeedm/s</span>
             </div>
           </div>
           <p id="paragraph" style="text-align: justify">
             &emsp;&emsp;According to the Meteorological Department, the weather
             pattern is not going to change in the coming days. The city is
-            expected to get &gt;Clear Sky till &gt;Date+1. The sky conditions
-            will mostly be of &gt;desc in the afternoons. Maximum and minimum
-            tempratures will be around &gt;Maxtemp &deg;C and &gt;Maxtemp
-            &deg;C. It maybe feels like &gt;feels like in many areas of
-            &gt;CITYNAME overnight. Due to atmospheric pressure on the sea level
-            (&gt;pressure hPa) and ground level (&gt;grnd_level hPa), the wind
-            speed forecast to move &gt;WindSpeed m/s off the coast to
-            &gt;winddegree degrees.<br />Sunrise and Sunset will be on 06:23 AM
-            and 06:23 PM respectively.
+            expected to get <span id="main">Clear Sky</span> till
+            <span id="tommorow">Date+1</span>. The sky conditions will mostly be
+            of <span id="description2">desc</span> in the afternoons. Maximum and
+            minimum tempratures will be around
+            <span id="maxtemp">Maxtemp</span>&deg;C and
+            <span id="mintemp">Mintemp</span>&deg;C. It could feel like
+            <span id="feelslike">feelslike</span> in many areas of
+            <span id="cityname2">CITYNAME</span> overnight. Due to atmospheric
+            pressure on the sea level (<span id="pressure">pressure</span> hPa)
+            and ground level (<span id="ground">grnd_level</span> hPa), the wind
+            speed forecast to move <span id="windspeed2">WindSpeed</span> off
+            the coast to
+            <span id="winddegree">winddegree</span> degrees.<br />Sunrise and
+            Sunset will be on <span id="sunrise">06:23 AM</span> and
+            <span id="sunset">06:23 PM</span> respectively.
           </p>
         </section>
       </article>
       <aside id="aside">
-        <img src="assets/city.webp" alt="Indian Cityscape"><br> 
+        <img src="assets/city.webp" alt="Indian Cityscape" /><br />
         <span style="font-size: 50px">L</span>
         orem ipsum dolor sit amet consectetur adipisicing elit. Et quam est quia
         molestiae, accusantium minus aliquam impedit nulla ratione neque libero
@@ -135,6 +143,7 @@
       iusto veritatis temporibus. Qui, eveniet modi? Neque aliquid nemo aperiam
       delectus, est tenetur possimus.
     </footer>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
 
@@ -154,7 +163,6 @@ const amPm = (istDate.getHours() < 12) ? 'AM' : 'PM';
 const formattedDate = `${hours}:${minutes.toString().padStart(2, '0')} ${amPm}`;
 
 console.log(formattedDate); -->
-
 
 <!-- const today = new Date();
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
