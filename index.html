@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A Weather App using vanilla JS and custom API"
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/faviconpplogo.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Prakriti Patra: An indigenous weather application.</title>
+  </head>
+  <body>
+    <header id="heading">
+      <h1>
+        Prakriti
+        <img id="mainlogo" alt="PrakritiPatraLogo" src="./assets/pplogo.svg" />
+        Patra
+      </h1>
+    </header>
+    <section id="search">
+      <img
+        id="currentlocation"
+        alt="PrakritiPatraLogo"
+        src="./assets/loc.svg"
+        title="Use precise location"
+      />
+      <div style="display: flex; align-items: center; gap: 20px">
+        <input
+          id="search-bar"
+          type="text"
+          name="Search City"
+          placeholder="Enter City"
+        />
+        <img
+          id="search-icon"
+          alt="PrakritiPatraLogo"
+          src="./assets/search.svg"
+        />
+      </div>
+      <p id="today">Today's Date</p>
+      <span id="continent">7 Continents | All cities</span>
+    </section>
+    <div id="lorem">
+      <article id="article">
+        <section id="data">
+          <h1 id="headline">
+            Weather predicted in
+            <span id="cityname" style="color: rgb(0, 183, 255)">City Name</span
+            >:Says Report
+          </h1>
+          <div id="subheadline">
+            <img
+              id="main-img"
+              src="https://openweathermap.org/img/w/02d.png"
+              alt="apiImage"
+              height="100px"
+            />
+            <h2 id="h2-line">
+              City appears to have
+              <span id="description">fewer clouds</span>
+            </h2>
+          </div>
+          <div id="middle-info">
+            <span id="main-temp">1234567890&deg;C</span>
+            <div id="clouds-etc">
+              <img
+                id="main-img"
+                src="assets/clouds.svg"
+                alt="api"
+                height="50px"
+              /><span>Clouds%</span>
+              <img
+                id="main-img"
+                src="assets/humid.svg"
+                alt="api"
+                height="40px"
+              /><span>Humidity%</span>
+              <img
+                id="main-img"
+                src="assets/gusts.svg"
+                alt="api"
+                height="35px"
+              /><span>WindSpeedm/s</span>
+            </div>
+          </div>
+          <p style="text-align: justify">
+            The city is expected to get &gt;Clear Sky till &gt;Date+1. The sky
+            conditions will mostly be of &gt;desc in the afternoons. Maximum and
+            minimum tempratures will be around &gt;Maxtemp &deg;C and
+            &gt;Maxtemp &deg;C. It maybe feels like &gt;feels like. Atmospheric
+            pressure on the sea level will be &gt;pressure hPa and ground level
+            will be &gt;grnd_level hPa. Wind speed forecast to move
+            &gt;WindSpeed m/s off the coast to &gt;winddegree degrees.<br />Sunrise:
+            and Sunset:
+          </p>
+        </section>
+      </article>
+      <aside id="aside">
+        <span style="font-size: 50px">L</span>
+        orm ipsum dolor sit amet consectetur adipisicing elit. Et quam est quia
+        molestiae, accusantium minus aliquam impedit nulla ratione neque libero
+        amet maiores incidunt autem. Voluptas repellat iste dignissimos iure.
+        Minus dolorem doloremque, exercitationem dolore consequatur perspiciatis
+        fuga iste, maiores dolorum ipsa soluta similique mollitia sequi possimus
+        quaerat quo quia voluptas explicabo nam? Nostrum suscipit, quas quis
+        molestiae quod tempore?Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Et quam est quia molestiae, accusantium minus aliquam
+        impedit nulla ratione neque libero amet maiores incidunt autem. Voluptas
+        repellat iste dignissimos iure. Minus dolorem doloremque, exercitationem
+        dolore consequatur perspiciatis fuga iste, maiores dolorum ipsa soluta
+        similique mollitia sequi possimus quaerat quo quia voluptas explicabo
+        nam? Nostrum suscipit, quas quis molestiae quod tempore?Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Et quam est quia molestiae,
+        accusantium minus aliquam impedit nulla ratione neque libero amet
+        maiores incidunt autem. Voluptas repellat iste dignissimos iure. Minus
+        dolorem doloremque, exercitationem dolore consequatur perspiciatis fuga
+        iste, maiores dolorum ipsa soluta similique mollitia sequi possimus
+        quaerat quo quia voluptas explicabo nam? Nostrum suscipit, quas quis
+        molestiae quod tempore?Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Et quam est quia molestiae, accusantium minus aliquam
+        impedit nulla ratione neque libero amet maiores incidunt autem. Voluptas
+        repellat iste dignissimos iure. Minus dolorem doloremque, exercitationem
+        dolore consequatur perspiciatis fuga iste, maiores dolorum ipsa soluta
+        similique mollitia sequi possimus quaerat quo quia voluptas explicabo
+        nam? Nostrum suscipit, quas quis molestiae quod tempore?Lorem ipsum
+        dolor sit amet consectetur adipisicing
+      </aside>
+    </div>
+    <footer>
+      FooterFooterFooterFooterFooterFooterFooterFooterFooterFooterFooterFooterFooter
+      Lorem ipsum dFooterolor sit amet consectetur adipisicing elit. At
+      architecto quasi aliquam magnam doloribus laboriosam adipisci officiis
+      amet qui, dolorum odit culpa ullam voluptatem mollitia, quidem temporibus
+      commodi voluptates veniam.
+    </footer>
+  </body>
+</html>
+
+<!-- const utcTimestamp = 1712451217;
+
+// Convert UTC timestamp to milliseconds
+const utcDate = new Date(utcTimestamp * 1000);
+
+// Define IST offset (5 hours and 30 minutes ahead of UTC)
+const istOffset = 5.5;
+const istDate = new Date(utcDate.getTime() + (istOffset * 60 * 60 * 1000));
+
+// Format IST date in 12-hour format
+const hours = istDate.getHours() % 12 || 12;
+const minutes = istDate.getMinutes();
+const amPm = (istDate.getHours() < 12) ? 'AM' : 'PM';
+const formattedDate = `${hours}:${minutes.toString().padStart(2, '0')} ${amPm}`;
+
+console.log(formattedDate); -->
