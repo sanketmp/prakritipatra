@@ -1,3 +1,6 @@
+![Homepage](https://github.com/sanketmp/prakritipatra/assets/68698332/2823d018-c4bf-47cb-8c9e-7c97462a3fc1)
+
+
 # Prakriti 🦁 Patra
 
 An indigenous online weather application. Made using vanilla JS and custom API.
