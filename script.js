@@ -1,7 +1,39 @@
-import { days, months, headlines } from "./constants.js";
-
 let lat = null;
 let long = null;
+
+function todaydate() {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  const days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let today = new Date();
+  const day = days[today.getDay()];
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = months[today.getMonth()];
+  const yyyy = today.getFullYear();
+
+  return `${day} | ${dd} ${mm}, ${yyyy}`;
+}
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(updatePosition);
@@ -30,16 +62,35 @@ async function setWeatherFromCity() {
   updateweather(data);
 }
 
+function time(timedata) {
+  const utcTimestamp = timedata;
+  const utcDate = new Date(utcTimestamp * 1000);
+  const indianDate = utcDate.toLocaleString("en-IN");
+  const time = indianDate.split(",")[1].trim();
+
+  return time;
+}
+
+function setHeadline(city) {
+  const headlines = [
+    `Weather predicted in ${city}:Says Report`,
+    `${city} prepares for Predicted Weather Shifts`,
+    `${city}'s Forecast: Daily Weather Update`,
+    `Experts anticipate varied weather for ${city}`,
+    `${city}'s Weather Trends: Experts weigh in`,
+  ];
+  let hline = headlines[Math.floor(Math.random() * 5)];
+  return hline;
+}
+
 function updateweather(data) {
   if (data?.cod == "404") {
-    document.querySelector(".error").style.visibility = "visible";
-    document.querySelector(".error").innerHTML = `${data?.message}`;
-    document.querySelector("#data").style.visibility = "hidden";
-  } else {
-    document.querySelector(".error").style.visibility = "hidden";
     document.querySelector("#data").style.visibility = "visible";
-    document.querySelector("#cityname").innerHTML = `${data?.name}`;
-    document.querySelector("#cityname2").innerHTML = `${data?.name}`;
+    document.querySelector("#headline").innerHTML = "No City Found";
+  } else {
+    document.querySelector("#data").style.visibility = "visible";
+    document.querySelector("#headline").innerHTML = setHeadline(data?.name);
+    document.querySelector("#cityname2").innerHTML = `${data?.name}`; //city name
     document.querySelector("#main").innerHTML = `${data?.weather?.[0]?.main}`;
     document.querySelector(
       "#main-img"
@@ -71,18 +122,22 @@ function updateweather(data) {
     document.querySelector(
       "#description2"
     ).innerHTML = `${data?.weather?.[0]?.description}`;
-    document.querySelector("#tommorow").innerHTML = `Date ++1`;
     document.querySelector("#feelslike").innerHTML = `${(
       data?.main?.feels_like - 273
     ).toFixed(0)}&deg;C`;
     document.querySelector("#pressure").innerHTML = `${data?.main?.pressure}`;
     document.querySelector("#ground").innerHTML = `${data?.main?.grnd_level}`;
     document.querySelector("#winddegree").innerHTML = `${data?.wind?.deg}`;
-    document.querySelector("#sunrise").innerHTML = `${data?.sys["sunrise"]}`;
-    document.querySelector("#sunset").innerHTML = `${data?.sys["sunset"]}`;
+    document.querySelector("#sunrise").innerHTML = `${time(
+      data?.sys["sunrise"]
+    )}`;
+    document.querySelector("#sunset").innerHTML = `${time(
+      data?.sys["sunset"]
+    )}`;
   }
 }
 
+document.querySelector("#today").innerHTML = `${todaydate()}`;
 document
   .querySelector("#currentlocation")
   .addEventListener("click", getLocation);

@@ -57,12 +57,6 @@ body {
   margin-right: 20px;
 }
 
-.error {
-  visibility: hidden;
-  text-align: center;
-  color: red;
-}
-
 #lorem {
   margin-top: 10px;
 }
@@ -86,6 +80,10 @@ body {
   padding-bottom: 10px;
   width: 26.04166666666667%;
   text-align: justify;
+}
+
+#data{
+  visibility: hidden;
 }
 
 #data #headline {
@@ -117,10 +115,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-}
-
-#data{
-  /* visibility: hidden; */
 }
 
 #data #middle-info {
