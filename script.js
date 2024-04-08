@@ -84,7 +84,11 @@ function setHeadline(city) {
 }
 
 function updateweather(data) {
-  if (data?.cod == "404") {
+  if (document.querySelector("#search-bar").value === "") {
+    document.querySelector("#data").style.visibility = "visible";
+    document.querySelector("#headline").innerHTML =
+      "City cannot be blank: Says JS";
+  } else if (data?.cod == "404") {
     document.querySelector("#data").style.visibility = "visible";
     document.querySelector("#headline").innerHTML = "No City Found";
   } else {
