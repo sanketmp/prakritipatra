@@ -56,16 +56,12 @@ async function setWeatherFromMyLocation() {
 }
 
 async function setWeatherFromCity() {
-  let city = `q=${document.querySelector("#search-bar").value.toLowerCase()}`;
+  let city = `q=${document.getElementById("search-bar").value.toLowerCase()}`;
   let val = await fetch(`https://backend-wthr.vercel.app/${city}`);
   let data = await val.json();
-  if (document.querySelector("#search-bar").value === "") {
-    document.querySelector("#data").style.visibility = "visible";
-    document.querySelector("#headline").innerHTML =
-      "City cannot be blank: Says JS";
-  } else if (data?.cod == "404") {
-    document.querySelector("#data").style.visibility = "visible";
-    document.querySelector("#headline").innerHTML = "No City Found";
+  if (data?.cod == "404") {
+    document.getElementById("data").style.visibility = "visible";
+    document.getElementById("headline").innerHTML = `${data?.message}`;
   } else {
     updateweather(data);
   }
@@ -93,63 +89,68 @@ function setHeadline(city) {
 }
 
 function updateweather(data) {
-  document.querySelector("#data").style.visibility = "visible";
-  document.querySelector("#headline").innerHTML = setHeadline(data?.name);
-  document.querySelector("#cityname2").innerHTML = `${data?.name}`; //city name
-  document.querySelector("#main").innerHTML = `${data?.weather?.[0]?.main}`;
-  document.querySelector(
-    "#main-img"
+  document.getElementById("data").style.visibility = "visible";
+  document.getElementById("headline").innerHTML = setHeadline(data?.name);
+  document.getElementById("cityname2").innerHTML = `${data?.name}`; //city name
+  document.getElementById("main").innerHTML = `${data?.weather?.[0]?.main}`;
+  document.getElementById(
+    "main-img"
   ).src = `https://openweathermap.org/img/w/${data?.weather?.[0]?.icon}.png`;
-  document.querySelector("#main-temp").innerHTML = `${(
+  document.getElementById("main-temp").innerHTML = `${(
     data?.main?.temp - 273
   ).toFixed(1)}&deg;C`;
-  document.querySelector(
-    "#windspeed"
+  document.getElementById(
+    "windspeed"
   ).innerHTML = `${data?.wind?.speed}&nbsp;m&#47;s`;
-  document.querySelector(
-    "#windspeed2"
+  document.getElementById(
+    "windspeed2"
   ).innerHTML = `${data?.wind?.speed}&nbsp;m&#47;s`;
-  document.querySelector(
-    "#humidity"
+  document.getElementById(
+    "humidity"
   ).innerHTML = `${data?.main?.humidity}&nbsp;&percnt;`;
-  document.querySelector(
-    "#clouds"
+  document.getElementById(
+    "clouds"
   ).innerHTML = `${data?.clouds?.all}&nbsp;&percnt;`;
-  document.querySelector("#mintemp").innerHTML = `${(
+  document.getElementById("mintemp").innerHTML = `${(
     data?.main.temp_min - 273
   ).toFixed(0)}`;
-  document.querySelector("#maxtemp").innerHTML = `${(
+  document.getElementById("maxtemp").innerHTML = `${(
     data?.main.temp_max - 273
   ).toFixed(0)}`;
-  document.querySelector(
-    "#description"
+  document.getElementById(
+    "description"
   ).innerHTML = `${data?.weather?.[0]?.description}`;
-  document.querySelector(
-    "#description2"
+  document.getElementById(
+    "description2"
   ).innerHTML = `${data?.weather?.[0]?.description}`;
-  document.querySelector("#feelslike").innerHTML = `${(
+  document.getElementById("feelslike").innerHTML = `${(
     data?.main?.feels_like - 273
   ).toFixed(0)}&deg;C`;
-  document.querySelector("#pressure").innerHTML = `${data?.main?.pressure}`;
-  document.querySelector("#ground").innerHTML = `${data?.main?.grnd_level}`;
-  document.querySelector("#winddegree").innerHTML = `${data?.wind?.deg}`;
-  document.querySelector("#sunrise").innerHTML = `${time(
+  document.getElementById("pressure").innerHTML = `${data?.main?.pressure}`;
+  document.getElementById("ground").innerHTML = `${data?.main?.grnd_level}`;
+  document.getElementById("winddegree").innerHTML = `${data?.wind?.deg}`;
+  document.getElementById("sunrise").innerHTML = `${time(
     data?.sys["sunrise"]
   )}`;
-  document.querySelector("#sunset").innerHTML = `${time(data?.sys["sunset"])}`;
+  document.getElementById("sunset").innerHTML = `${time(data?.sys["sunset"])}`;
 }
 
-document.querySelector("#today").innerHTML = `${todaydate()}`;
+document.getElementById("today").innerHTML = `${todaydate()}`;
 document
-  .querySelector("#currentlocation")
+  .getElementById("currentlocation")
   .addEventListener("click", getLocation);
+document.getElementById("search-icon").addEventListener("click", function () {
+  if (document.getElementById("search-bar").value !== "") {
+    setWeatherFromCity();
+  }
+});
 document
-  .querySelector("#search-icon")
-  .addEventListener("click", setWeatherFromCity);
-document
-  .querySelector("#search-bar")
+  .getElementById("search-bar")
   .addEventListener("keyup", function (event) {
-    if (event.key === "Enter") {
+    if (
+      event.key === "Enter" &&
+      document.getElementById("search-bar").value !== ""
+    ) {
       setWeatherFromCity();
     }
   });
